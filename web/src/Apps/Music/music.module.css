@@ -1,0 +1,28 @@
+:root{
+    --primary-verde: #1db954;
+    --primary--text: #e5e5e5;
+    --background--fundo: #121212;
+    --background--paper: #181818;
+    --divider--shadow: rgba(255,255,255, 0.1);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div{
+    height: 100vh;
+    color: var(--primary--text);
+    background-color: var(--background--fundo);
+}
+.header{
+    text-align: center;
+    border-bottom: 1px solid var(--divider--shadow);
+    padding: 8px 0;    
+}
+.header h1{
+    margin: 0;
+}
+.header span{
+    color: var(--primary-verde);
+}

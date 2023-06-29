@@ -1,0 +1,51 @@
+:root{
+    --primary-verde: #1db954;
+    --primary--text: #e5e5e5;
+    --secondary--text: #2db919;
+    --background--fundo: #121212;
+    --background--paper: #181818;
+    --divider--shadow: rgba(255,255,255, 0.1);
+}
+.music-list{
+    list-style-type: decimal;
+    margin: 32px 0 0;
+    height: 20px;
+}
+.music-list-item{
+    padding: 8px 32px 8px 8px;
+    cursor: pointer;
+}
+.music-list-item:hover{
+    opacity: .8;
+    background-color: rgba(255,255,255, 0.1);
+}
+
+.music-list-item.selected::marke{
+    color: var(--secondary--text);
+}
+.music-list-item.selected .title{
+    color: var(--secondary--text);
+}
+.information{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+        'title time'
+        'artist time'
+    ;
+    align-items: center;
+}
+.title{
+    grid-area: title;
+}
+.artist{
+    grid-area: artist;
+    color: var(--primary--text);
+}
+.time{
+    width: 80px;
+    grid-area: time;
+    text-align: right;
+    color: var(--secondary--text);
+}

@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+    background-color: #1c1c1c;
+}
+table{
+    border: 5px solid #fff;
+    background-color: darkorchid;
+}
+th, td{
+    border: 1px solid #fff;
+    padding: 5px;
+}
+td{
+    text-align: center;
+}
