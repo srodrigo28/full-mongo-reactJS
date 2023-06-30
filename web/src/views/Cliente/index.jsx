@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import * as S from "./style";
 
 import api from '../../services/api'
@@ -22,9 +23,9 @@ export function Cliente(){
 
     valorReceber = (valorCapital * percentual) / 100
     
-    const handleRedirect = () => navigate('/');
+    const handleRedirect = () => navigate('/clientes');
 
-    async function Save() {
+    async function SaveCliente(){
         await api.post('/cliente', {
             tel,
             cpf,
@@ -34,12 +35,18 @@ export function Cliente(){
             percentual,
             valorReceber,
         })
-        // setTimeout(() => {
-        //     toast.success("Salvo com sucesso!")
-        // }, 3000)
-        .then( () => handleRedirect())
-    }
 
+        setTimeout(() => {
+            // toast.success("Salvo com sucesso!")
+            handleRedirect()
+            
+        }, 3900)
+        // alert("Cadastrado com sucesso")
+        
+        toast.success("Salvo com sucesso!")
+ 
+         
+     }
     return(
         <S.Container>
              <Header lateCount={1} />
@@ -118,7 +125,7 @@ export function Cliente(){
                 </S.InputGroup>
 
                  <S.Save>
-                    <button type="button" onClick={Save}> Salvar </button>
+                    <button type="button" onClick={SaveCliente}> Salvar </button>
                  </S.Save>
 
             </S.Form>

@@ -13,6 +13,7 @@ router.post('/', ClienteController.create)
 // router.get('/:id', TaskController.show)
 
 router.get('/filter/all/:cpf', ClienteController.all)
+router.get('/', ClienteController.all2)
 // router.get('/filter/late/:macaddress', TaskController.late)
 
 // router.get('/filter/month/:vencimento', TaskController.month)

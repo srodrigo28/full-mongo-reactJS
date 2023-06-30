@@ -14,6 +14,8 @@ export function Header( {lateCount, clickNotification})  {
             <S.RightSide>
                 <Link to="/cliente">Cliente</Link>
                 <span className="dividir" />
+                <Link to="/clientes">Cliente Lista</Link>
+                <span className="dividir" />
                 <Link to="/user">User</Link>
                 <span className="dividir" />
                 <Link to="/contas">Contas</Link>

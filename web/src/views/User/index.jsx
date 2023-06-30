@@ -11,6 +11,7 @@ import { Footer } from './../../components/Footer'
 
 export function User(){
     const [lateCount, setLateCount] = useState()
+
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
@@ -33,8 +34,10 @@ export function User(){
     }
 
     useEffect(() => {
+
         lateVerify()
-    }, [])
+    }, [lateCount])
+
     return(
         <S.Container>
              <Header lateCount={lateCount} />
