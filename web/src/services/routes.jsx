@@ -8,6 +8,7 @@ export function AppRoutes(){
     return(
         <BrowserRouter>
             <Routes>
+                <Route path='/' element={ <User /> } />
                 <Route path='/user' element={ <User /> } />
                 <Route path='/contas' element={ <Contas /> } />
                 <Route path='/cliente' element={ <Cliente /> } />

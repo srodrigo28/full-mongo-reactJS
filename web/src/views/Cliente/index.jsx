@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import { useState } from "react"
+import { useNavigate } from 'react-router-dom'
 import * as S from "./style";
 
 import api from '../../services/api'
@@ -15,9 +16,13 @@ export function Cliente(){
 
     const [valorCapital, setValorCapital] = useState("")
     const [percentual, setPercentual] = useState("")
+    const navigate = useNavigate()
+
     let [valorReceber, setValorReceber] = useState("")
 
     valorReceber = (valorCapital * percentual) / 100
+    
+    const handleRedirect = () => navigate('/');
 
     async function Save() {
         await api.post('/cliente', {
@@ -27,10 +32,12 @@ export function Cliente(){
             email,
             valorCapital,
             percentual,
-            valorReceber
+            valorReceber,
         })
-        .then(() => alert('Cadastrado com sucesso')
-        )
+        // setTimeout(() => {
+        //     toast.success("Salvo com sucesso!")
+        // }, 3000)
+        .then( () => handleRedirect())
     }
 
     return(
