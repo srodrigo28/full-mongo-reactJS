@@ -18,7 +18,8 @@ export function Header( {lateCount, clickNotification})  {
                 <span className="dividir" />
                 <Link to="/user">User</Link>
                 <span className="dividir" />
-                <Link to="/contas">Contas</Link>
+                <Link to="/conta">Contas</Link>
+                <Link to="/contas">Conta</Link>
                 <span className="dividir" />
                 <button type='button'  onClick={clickNotification} id='notification'>
                     <img src={bell} alt="sinalização" />

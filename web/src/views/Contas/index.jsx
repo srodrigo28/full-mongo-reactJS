@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 import { useEffect, useState } from "react"
 import * as S from "./style";
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 import api from '../../services/api'
 
@@ -9,8 +11,14 @@ import { Footer } from './../../components/Footer'
 
 export function Contas(){
     const [lateCount, setLateCount] = useState()
+    
+    const navigate = useNavigate()
+    const handleRedirect = () => navigate('/conta');
+    
     const [descricao, setDescricao] = useState("")
     const [valor, setValor] = useState("")
+    const [status, setStatus] = useState("")
+    
     const [date, setDate] = useState("2023-06-02")
     const [hour, setHour] = useState("02:02:00")
 
@@ -25,10 +33,13 @@ export function Contas(){
         await api.post('/conta', {
             descricao,
             valor,
-            vencimento: `${date}T${hour}:00.000`
+            when: `${date}T${hour}:00.000`
         })
-        .then(() => alert('Cadastrado com sucesso')
-        )
+        setTimeout(() => {
+            handleRedirect()
+            
+        }, 3900)
+        toast.success("Salvo com sucesso!")
     }
 
     useEffect(() => {
@@ -56,6 +67,14 @@ export function Contas(){
                         type="text"
                         onChange={ e => setValor(e.target.value) } value={valor}
                         placeholder="R$ 1.00,00"
+                    />
+                </S.Input>
+                <S.Input>
+                    <span>Status</span>
+                    <input
+                        type="text"
+                        onChange={ e => setStatus(e.target.value) } value={status}
+                        placeholder="Pago???"
                     />
                 </S.Input>
                 <S.Input>

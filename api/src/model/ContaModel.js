@@ -8,6 +8,9 @@ const ContaSchema = new Schema({
     valor: { 
         type: String, required: true 
     },
+    status: { 
+        type: String, default: "Pagar?" 
+    },
     vencimento: { type: Date, default: Date.now()},
     
     data_criacao: { type: Date, default: Date.now()},

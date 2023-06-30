@@ -37,11 +37,9 @@ export function Cliente(){
         })
 
         setTimeout(() => {
-            // toast.success("Salvo com sucesso!")
             handleRedirect()
             
         }, 3900)
-        // alert("Cadastrado com sucesso")
         
         toast.success("Salvo com sucesso!")
  

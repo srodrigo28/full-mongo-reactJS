@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 import { useMemo } from "react";
 import typeIcons from "./../../services/typeIcons"
 
-export function TaskCard({type, title, when}) {
+export function TaskCard( {type, title, when} ) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const date = useMemo(() => format(new Date(when), 'dd/MM/yyyy'));
     // eslint-disable-next-line react-hooks/exhaustive-deps
