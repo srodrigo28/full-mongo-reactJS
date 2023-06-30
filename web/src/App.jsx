@@ -6,7 +6,7 @@ import {AppRoutes} from './services/routes'
 export function App(){
     return(
         <>
-            <ToastContainer autoClose={2500} />
+            <ToastContainer autoClose={2000} />
             <AppRoutes />
         </>
     )

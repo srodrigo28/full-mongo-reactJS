@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { useEffect, useState } from "react"
 import * as S from "./style";
 import { toast } from 'react-toastify'
@@ -19,8 +18,8 @@ export function Contas(){
     const [valor, setValor] = useState("")
     const [status, setStatus] = useState("")
     
-    const [date, setDate] = useState("2023-06-02")
-    const [hour, setHour] = useState("02:02:00")
+    const [date, setDate] = useState("")
+    const [hour, setHour] = useState("")
 
     async function lateVerify() {
         await api.get(`/conta`)
@@ -33,7 +32,7 @@ export function Contas(){
         await api.post('/conta', {
             descricao,
             valor,
-            when: `${date}T${hour}:00.000`
+            vencimento: `${date}T${hour}:00.000`
         })
         setTimeout(() => {
             handleRedirect()
