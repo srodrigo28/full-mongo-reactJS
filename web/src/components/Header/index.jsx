@@ -1,6 +1,7 @@
 import * as S from './styles'
 import logo from './../../assets/logo.png'
 import bell from './../../assets/bell.png'
+import { Link } from 'react-router-dom'
 
 // eslint-disable-next-line react/prop-types
 export function Header( {lateCount, clickNotification})  {
@@ -11,11 +12,11 @@ export function Header( {lateCount, clickNotification})  {
             </S.LeftSide>
 
             <S.RightSide>
-                <a href="#">Início</a>
+                <Link to="/cliente">Cliente</Link>
                 <span className="dividir" />
-                <a href="#">Nova Tarefa</a>
+                <Link to="/user">User</Link>
                 <span className="dividir" />
-                <a href="#">Sincronizar Celular</a>
+                <Link to="/contas">Contas</Link>
                 <span className="dividir" />
                 <button type='button'  onClick={clickNotification} id='notification'>
                     <img src={bell} alt="sinalização" />
